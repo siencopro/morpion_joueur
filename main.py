@@ -18,25 +18,31 @@ jeu = Jeu(ecran)
 
 def jeu_boucle():
     global jeu_en_cours
-    try:
-        # appliquer arrière plan
-        ecran.blit(ArrierePlan, (0, -200))
+    #try:
+    # appliquer arrière plan
+    ecran.blit(ArrierePlan, (0, -200))
 
-        jeu.boucle_du_jeu()
+    jeu.boucle_du_jeu()
 
-        # mettre a jour l'écrant
-        pygame.display.flip()
+    # mettre a jour l'écrant
+    pygame.display.flip()
 
-        # si il ferme la fenetre
-        for event in pygame.event.get():
-            # fermeture fenetre
-            if event.type == pygame.QUIT:
-                jeu_en_cours = False
-                pygame.quit()
+    # si il ferme la fenetre
+    for event in pygame.event.get():
+        # fermeture fenetre
+        if event.type == pygame.QUIT:
+            jeu_en_cours = False
+            pygame.quit()
 
-    except Exception as e:
-        texte = str(traceback.extract_tb(e.__traceback__, None))
-        print(texte)
+
+        #clique de la souris
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if jeu.case_une.rect.collidepoint(event.pos):
+                print("case une toucher")
+
+    #except Exception as e:
+        #texte = str(traceback.extract_tb(e.__traceback__, None))
+        #print(texte)
 
 while jeu_en_cours:
     jeu_boucle()
