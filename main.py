@@ -40,7 +40,11 @@ def jeu_boucle():
         #clique de la souris
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if jeu.case_une.rect.collidepoint(event.pos):
-                print("case une toucher")
+                jeu.case_une.image = pygame.image.load('case_rond.png')
+            elif jeu.case_deux.rect.collidepoint(event.pos):
+                jeu.case_deux.image = pygame.image.load('case_rond.png')
+            elif jeu.case_trois.rect.collidepoint(event.pos):
+                jeu.case_trois.image = pygame.image.load('case_rond.png')
 
     #except Exception as e:
         #texte = str(traceback.extract_tb(e.__traceback__, None))
