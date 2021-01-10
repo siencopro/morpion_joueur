@@ -8,7 +8,7 @@ jeu_en_cours = True
 
 #génération fenetre
 pygame.display.set_caption("morpion")
-ecran = pygame.display.set_mode((1080,700))
+ecran = pygame.display.set_mode((630,630))
 
 #import arrière plan
 ArrierePlan = pygame.image.load('bg.jpg')
