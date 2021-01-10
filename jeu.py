@@ -33,13 +33,26 @@ class Jeu:
         self.case_neuf.rect.x = 425
         self.case_neuf.rect.y = 425
         self.a_qui_de_jouer = ""
+        self.plateau = {
+            1 : "vide",
+            2 : "vide",
+            3 : "vide",
+            4 : "vide",
+            5 : "vide",
+            6 : "vide",
+            7 : "vide",
+            8 : "vide",
+            9 : "vide"
+        }
 
     def boucle_du_jeu(self):
         self.affichage_plateau()
+        if self.a_qui_de_jouer == "machine":
+            self.jouer()
 
 
     def choisir_qui_commence(self):
-        alea = random.randint(1,2)
+        alea = 1 #random.randint(1,2)
         if alea == 1:
             self.a_qui_de_jouer = "machine"
             print("machine commence")
@@ -60,3 +73,28 @@ class Jeu:
         self.ecran.blit(self.case_sept.image, self.case_sept.rect)
         self.ecran.blit(self.case_huit.image, self.case_huit.rect)
         self.ecran.blit(self.case_neuf.image, self.case_neuf.rect)
+
+    def jouer(self):
+        # machine commence tour un
+        if self.plateau == {1 : "vide", 2 : "vide", 3 : "vide", 4 : "vide", 5 : "vide", 6 : "vide", 7 : "vide", 8 : "vide", 9 : "vide"} :
+            self.case_une.image = pygame.image.load('case_croix.png')
+            self.case_une.vide = False
+            self.plateau[1] = "machine"
+            self.a_qui_de_jouer = "joueur"
+        #machine commence tour deux
+        elif self.plateau == {1 : "machine", 2 : "joueur", 3 : "vide", 4 : "vide", 5 : "vide", 6 : "vide", 7 : "vide", 8 : "vide", 9 : "vide"} :
+            self.case_cinque.image = pygame.image.load('case_croix.png')
+            self.case_cinque.vide = False
+            self.plateau[5] = "machine"
+            self.a_qui_de_jouer = "joueur"
+        elif self.plateau == {1 : "machine", 2 : "vide", 3 : "joueur", 4 : "vide", 5 : "vide", 6 : "vide", 7 : "vide", 8 : "vide", 9 : "vide"} :
+            self.case_neuf.image = pygame.image.load('case_croix.png')
+            self.case_neuf.vide = False
+            self.plateau[9] = "machine"
+            self.a_qui_de_jouer = "joueur"
+
+        elif self.plateau == {1 : "machine", 2 : "vide", 3 : "vide", 4 : "joueur", 5 : "vide", 6 : "vide", 7 : "vide", 8 : "vide", 9 : "vide"} :
+            self.case_cinque.image = pygame.image.load('case_croix.png')
+            self.case_cinque.vide = False
+            self.plateau[5] = "machine"
+            self.a_qui_de_jouer = "joueur"
