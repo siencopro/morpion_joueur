@@ -7,3 +7,4 @@ class Case:
         self.rect = self.image.get_rect()
         self.rect.x = 5
         self.rect.y = 5
+        self.vide = True

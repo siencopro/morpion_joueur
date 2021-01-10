@@ -32,6 +32,7 @@ class Jeu:
         self.case_neuf = Case()
         self.case_neuf.rect.x = 425
         self.case_neuf.rect.y = 425
+        self.a_qui_de_jouer = ""
 
     def boucle_du_jeu(self):
         self.affichage_plateau()
@@ -40,8 +41,10 @@ class Jeu:
     def choisir_qui_commence(self):
         alea = random.randint(1,2)
         if alea == 1:
+            self.a_qui_de_jouer = "machine"
             print("machine commence")
         else:
+            self.a_qui_de_jouer = "joueur"
             print("joueur commence")
 
     def affichage_plateau(self):
