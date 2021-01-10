@@ -11,10 +11,12 @@ pygame.display.set_caption("morpion")
 ecran = pygame.display.set_mode((630,630))
 
 #import arrière plan
-ArrierePlan = pygame.image.load('bg.jpg')
+ArrierePlan = pygame.image.load('bg.png')
 
 #importé le jeu
 jeu = Jeu(ecran)
+
+jeu.choisir_qui_commence()
 
 def jeu_boucle():
     global jeu_en_cours

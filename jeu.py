@@ -47,24 +47,13 @@ class Jeu:
     def affichage_plateau(self):
 
 
-        pygame.draw.rect(self.ecran, (0,0,0), [0,0,210,210])
         self.ecran.blit(self.case_une.image, self.case_une.rect)
 
-        pygame.draw.rect(self.ecran, (0, 0, 0), [0, 210, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [5, 215, 200, 200])
-        pygame.draw.rect(self.ecran, (0, 0, 0), [0, 420, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [5, 425, 200, 200])
-
-        pygame.draw.rect(self.ecran, (0, 0, 0), [210, 0, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [215, 5, 200, 200])
-        pygame.draw.rect(self.ecran, (0, 0, 0), [210, 210, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [215, 215, 200, 200])
-        pygame.draw.rect(self.ecran, (0, 0, 0), [210, 420, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [215, 425, 200, 200])
-
-        pygame.draw.rect(self.ecran, (0, 0, 0), [420, 0, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [425, 5, 200, 200])
-        pygame.draw.rect(self.ecran, (0, 0, 0), [420, 210, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [425, 215, 200, 200])
-        pygame.draw.rect(self.ecran, (0, 0, 0), [420, 420, 210, 210])
-        pygame.draw.rect(self.ecran, (255, 255, 255), [425, 425, 200, 200])
+        self.ecran.blit(self.case_deux.image, self.case_deux.rect)
+        self.ecran.blit(self.case_trois.image, self.case_trois.rect)
+        self.ecran.blit(self.case_quatre.image, self.case_quatre.rect)
+        self.ecran.blit(self.case_cinque.image, self.case_cinque.rect)
+        self.ecran.blit(self.case_six.image, self.case_six.rect)
+        self.ecran.blit(self.case_sept.image, self.case_sept.rect)
+        self.ecran.blit(self.case_huit.image, self.case_huit.rect)
+        self.ecran.blit(self.case_neuf.image, self.case_neuf.rect)
